@@ -1,4 +1,3 @@
-
 resource "zerotier_member" "this" {
   name                    = var.name
   member_id               = var.member_id

@@ -4,7 +4,7 @@ terraform {
       source = "hashicorp/null"
     }
     zerotier = {
-      source = "zerotier/zerotier"
+      source  = "zerotier/zerotier"
       version = "~> 0.1.57"
     }
   }
