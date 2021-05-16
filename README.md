@@ -1,4 +1,4 @@
-# ZeroTier Network Terraform Module
+# ZeroTier Member Terraform Module
 
 ZeroTier lets you connect machines, containers, and programs to
 encrypted virtual LANs over the Internet. It provides NAT traversal,
@@ -20,9 +20,18 @@ Then, from your Terraform code, can create ZeroTier networks.
 ```hcl
 module "network" {
   source      = "zerotier/network/zerotier"
-  version     = "0.0.6"
+  version     = "0.1.0"
   description = "Hello ZeroTier!"
   subnets     = ["10.9.8.0/24"]
   flow_rules  = "accept;"
+}
+
+module "member" {
+  source      = "zerotier/member/zerotier"
+  version     = "0.1.0"
+  name        = "alice"
+  description = "alice's laptop"
+  member_id   = "DEADBEEF"
+  network_id  = module.network.id
 }
 ```
