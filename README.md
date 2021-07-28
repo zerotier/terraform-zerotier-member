@@ -52,7 +52,7 @@ Add the following to your `main.tf`
 ```hcl
 module "network" {
   source      = "zerotier/network/zerotier"
-  version     = "0.1.0"
+  version     = "1.0.0"
   name        = "hello_zerotier"
   description = "Hello ZeroTier!"
   subnets     = ["10.9.8.0/24"]
